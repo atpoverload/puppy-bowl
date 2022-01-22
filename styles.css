@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  font: 14px "Consolas", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  min-width: 230px;
+  max-width: 1000px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+  background-color: #000000;
+}
+
+.app-header {
+  background-color: #000;
+  height: 25px;
+  color: aliceblue;
+}
+
+.app-title {
+  font-size: 36px;
+  width: 100%;
+  font-weight: 100;
+  color: #FF4200;
+  text-align: left;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
+.game-container {
+  background: #000000;
+  margin: 0px 0 0px 0;
+}
+
+.game-area {
+  width: 100%;
+  margin: 20px auto;
+  margin-left: -400px;
+
+  display: grid;
+  grid-template-areas: "a b";
+  gap: 20px;
+}
+
+.game-ui {
+  width: max-content;
+}
+
+.ui-row {
+  background: #000000;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  color: #FF4200;
+  margin-bottom: 10px;
+  white-space: pre;
+  text-align: left;
+  border-color: #FF4200;
+  border-width: 2px;
+  border-style: solid;
+  padding: 5px;
+}
+
+.game-field {
+  display: inline-block;
+  background-color: aliceblue;
+  width: max-content;
+  overflow: hidden;
+}
+
+.game-row {
+  line-height: 0;
+}
+
+.game-cell {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
