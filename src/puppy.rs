@@ -88,7 +88,7 @@ impl Puppy {
         html! {
             <div class="ui-row">
                 { format!("{:<2}", i) }
-                <img src={format!("puppy-{}.png", self.name)}/>
+                <img src={format!("generated/puppy-{}.png", self.name)}/>
                 { format!("{:<10} |", get_name(self.name)) }
                 <span>
                 { format!(
@@ -102,6 +102,6 @@ impl Puppy {
     }
 
     pub fn get_image(&self) -> String {
-        format!("puppy-{}.png", self.name)
+        format!("generated/puppy-{}.png", self.name)
     }
 }

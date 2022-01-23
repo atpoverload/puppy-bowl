@@ -77,15 +77,15 @@ impl App {
             if pos == self.ball {
                 html! {
                     <div key={idx} class={classes!("game-cell")}>
-                        <img src="field.png" style="position: relative;"/>
+                        <img src="generated/field.png" style="position: relative;"/>
                         <img src={name.to_owned()} style="position: absolute; z-index: 1;"/>
-                        <img src="ball.png" style="position: absolute; z-index: 2;"/>
+                        <img src="generated/ball.png" style="position: absolute; z-index: 2;"/>
                     </div>
                 }
             } else {
                 html! {
                     <div key={idx} class={classes!("game-cell")}>
-                        <img src="field.png" style="position: relative;"/>
+                        <img src="generated/field.png" style="position: relative;"/>
                         <img src={name.to_owned()} style="position: absolute; z-index: 1;"/>
                     </div>
                 }
@@ -93,21 +93,21 @@ impl App {
         } else if pos == self.ball {
             html! {
                 <div key={idx} class={classes!("game-cell")}>
-                    <img src="field.png" style="position: relative;"/>
-                    <img src="ball.png" style="position: absolute; z-index: 1;"/>
+                    <img src="generated/field.png" style="position: relative;"/>
+                    <img src="generated/ball.png" style="position: absolute; z-index: 1;"/>
                 </div>
             }
         } else if pos == self.goal {
             html! {
                 <div key={idx} class={classes!("game-cell")}>
-                    <img src="field.png" style="position: relative;"/>
-                    <img src="goal.png" style="position: absolute; z-index: 1;"/>
+                    <img src="generated/field.png" style="position: relative;"/>
+                    <img src="generated/goal.png" style="position: absolute; z-index: 1;"/>
                 </div>
             }
         } else {
             html! {
                 <div key={idx} class={classes!("game-cell")}>
-                    <img src="field.png"/>
+                    <img src="generated/field.png"/>
                 </div>
             }
         }
