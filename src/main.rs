@@ -34,6 +34,7 @@ fn new_position(dimensions: Dimensions) -> Position {
 impl App {
     fn step(&mut self) {
         let mut order = (0..self.puppies.len()).collect::<Vec<usize>>();
+        let mut stolen = false;
         order.shuffle(&mut rand::thread_rng());
         for i in order {
             let mut occupied: Vec<(usize, usize)> = self.puppies.iter().map(|p| (p.x as usize, p.y as usize)).collect();
@@ -58,8 +59,9 @@ impl App {
                 }
             } else {
                 occupied.push(self.goal);
-                if !puppy.step(self.ball, &occupied) && adjacent(self.ball, puppy) && (random::<usize>() % 5) == 0 {
+                if !stolen && !puppy.step(self.ball, &occupied) && adjacent(self.ball, puppy) && (random::<usize>() % 3) == 0 {
                     puppy.steals += 1;
+                    stolen = true;
                     self.ball = (puppy.x as usize, puppy.y as usize);
                 }
             }
@@ -154,7 +156,12 @@ impl Component for App {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         // abstract ui rendering
-        let ui_rows = self.puppies.iter().map(|puppy| puppy.view());
+        let mut ui_rows = self.puppies.clone();
+        ui_rows.sort_by_key(|puppy| puppy.points);
+        ui_rows.reverse();
+        let ui_rows = ui_rows.iter().enumerate().map(|(i, puppy)| html! {
+            puppy.view(i + 1)
+        });
 
         // abstract field rendering
         let (width, height) = self.dimensions;

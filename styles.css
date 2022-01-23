@@ -44,7 +44,7 @@ body {
 .game-area {
   width: 100%;
   margin: 20px auto;
-  margin-left: -400px;
+  margin-left: -500px;
 
   display: grid;
   grid-template-areas: "a b";
@@ -57,7 +57,7 @@ body {
 
 .ui-row {
   background: #000000;
-  width: 400px;
+  width: 455px;
   display: flex;
   align-items: center;
   gap: 20px;

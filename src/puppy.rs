@@ -84,14 +84,15 @@ impl Puppy {
         return false;
     }
 
-    pub fn view(&self) -> Html {
+    pub fn view(&self, i: usize) -> Html {
         html! {
             <div class="ui-row">
+                { format!("{:<2}", i) }
                 <img src={format!("puppy-{}.png", self.name)}/>
                 { format!("{:<10} |", get_name(self.name)) }
                 <span>
                 { format!(
-                        "P:{:>3}  S:{:>3}",
+                        "P:{:0>3}  S:{:0>4}",
                         self.points,
                         self.steals
                 ) }
